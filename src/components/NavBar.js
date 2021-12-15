@@ -1,41 +1,54 @@
-function NavBar({ setSearchTerm, allData, setFilteredData }) {
+import { useState } from "react";
+import { AirportTypes } from "../utils/AirportType";
+
+function NavBar({ allData, setFilteredData }) {
+  const [filterString, setFilterString] = useState("");
+  const [isChecked, setIsChecked] = useState(
+    new Array(AirportTypes.length).fill(false)
+  );
+
+  const handleChange = (position, e) => {
+    let value = e.target.value.toLowerCase();
+    let result = allData.filter((data) => {
+      return data.type.toString().includes(value);
+    });
+    setFilteredData(result);
+
+    const updatedCheckedState = isChecked.map((item, index) => {
+      return index === position ? !item : item;
+    });
+    setIsChecked(updatedCheckedState);
+    setFilterString(filterString + value);
+  };
+  // console.log(filterString);
   const handleSearch = (event) => {
     let value = event.target.value.toLowerCase();
     let result = allData.filter((data) => {
-      return Object.values(data).join("").toLowerCase().search(value) !== -1;
+      return Object.values(data).join("").toLowerCase().includes(value);
     });
     setFilteredData(result);
   };
-  console.log(allData);
+  // console.log(allData);
   return (
     <nav>
       <div>
         <h3>Type</h3>
         <ul>
-          <li>
-            <input type="checkbox" name="small" id="small" />
-            Small
-          </li>
-          <li>
-            <input type="checkbox" name="medium" id="medium" />
-            Medium
-          </li>
-          <li>
-            <input type="checkbox" name="large" id="large" />
-            Large
-          </li>
-          <li>
-            <input type="checkbox" name="heliport" id="heliport" />
-            Heliport
-          </li>
-          <li>
-            <input type="checkbox" name="closed" id="closed" />
-            Closed
-          </li>
-          <li>
-            <input type="checkbox" name="favourites" id="favourites" />
-            in your favourites
-          </li>
+          {AirportTypes.map((val, i) => {
+            return (
+              <li key={i}>
+                <input
+                  type="checkbox"
+                  checked={isChecked[i]}
+                  onChange={(e) => {
+                    handleChange(i, e);
+                  }}
+                  value={val}
+                />{" "}
+                {val}
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div>

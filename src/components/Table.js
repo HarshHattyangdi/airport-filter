@@ -31,6 +31,7 @@ function Table({ searchTerm, setAllData, filteredData, setFilteredData }) {
 
   useEffect(() => {
     fetchAirports();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const indexOfLastAirport = currentPage * airportsPerPage;
