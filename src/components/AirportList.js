@@ -5,21 +5,17 @@ const Airport = ({ airports, loading }) => {
   console.log(airports);
   if (loading) {
     return (
-      <tbody>
-        <tr>
-          <td>
-            <h2>Loading...</h2>
-          </td>
-        </tr>
-      </tbody>
+      <>
+        <h2>Loading...</h2>
+      </>
     );
   } else {
     return (
-      <tbody>
+      <>
         {airports.map((airport, i) => (
           <AirportData key={i} airport={airport} />
         ))}
-      </tbody>
+      </>
     );
   }
   // } else {

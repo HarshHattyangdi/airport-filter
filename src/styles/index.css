@@ -59,3 +59,25 @@
     outline: none;
     border-bottom: 0.3em solid black;
 }
+
+.box3 {
+    grid-column: 1/-1;
+}
+
+.box3 article .table {
+    color: red;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.box3 article .table span {
+    color: blue;
+    padding: 8px 4px;
+
+}
+
+.box3 article .table div div span {
+    color: green;
+}

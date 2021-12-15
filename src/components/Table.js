@@ -105,7 +105,7 @@ function Table({ searchTerm, setAllData, filteredData, setFilteredData }) {
   };
   // console.log(airports);
   return (
-    <section>
+    <section className="box3">
       <article>
         <input
           type="number"
@@ -113,21 +113,31 @@ function Table({ searchTerm, setAllData, filteredData, setFilteredData }) {
           value={airportsPerPage}
           onChange={(e) => setAirportsPerPage(e.target.value)}
         />
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>ICO</th>
-              <th>IATA</th>
-              <th>Elev.</th>
-              <th>Lat.</th>
-              <th>Long.</th>
-              <th>Type</th>
-            </tr>
-          </thead>
+        <div className="table">
+          <span>
+            <strong>Name</strong>
+          </span>
+          <span>
+            <strong>ICAO</strong>
+          </span>
+          <span>
+            <strong>IATA</strong>
+          </span>
+          <span>
+            <strong>Elev.</strong>
+          </span>
+          <span>
+            <strong>Lat.</strong>
+          </span>
+          <span>
+            <strong>Long.</strong>
+          </span>
+          <span>
+            <strong>Type</strong>
+          </span>
 
           <AirportList airports={currentAirports} loading={loading} />
-        </table>
+        </div>
       </article>
       <Pagination
         totalAirports={filteredData.length}

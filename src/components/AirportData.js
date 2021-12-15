@@ -1,14 +1,14 @@
 const AirportData = ({ airport }) => {
   return (
-    <tr>
-      <td>{airport.name}</td>
-      <td>{airport.icao}</td>
-      <td>{airport.iata}</td>
-      <td>{airport.elevation}</td>
-      <td>{airport.latitude}</td>
-      <td>{airport.longitude}</td>
-      <td>{airport.type}</td>
-    </tr>
+    <>
+      <span>{airport.name}</span>
+      <span>{airport.icao}</span>
+      <span>{airport.iata}</span>
+      <span>{airport.elevation}</span>
+      <span>{airport.latitude}</span>
+      <span>{airport.longitude}</span>
+      <span>{airport.type}</span>
+    </>
   );
 };
 
