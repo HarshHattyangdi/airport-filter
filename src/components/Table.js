@@ -105,41 +105,44 @@ function Table({ searchTerm, setAllData, filteredData, setFilteredData }) {
   };
   // console.log(airports);
   return (
-    <section className="box3">
-      <article>
-        <input
-          type="number"
-          id="count"
-          value={airportsPerPage}
-          onChange={(e) => setAirportsPerPage(e.target.value)}
-        />
-        <div className="table">
-          <span>
-            <strong>Name</strong>
-          </span>
-          <span>
-            <strong>ICAO</strong>
-          </span>
-          <span>
-            <strong>IATA</strong>
-          </span>
-          <span>
-            <strong>Elev.</strong>
-          </span>
-          <span>
-            <strong>Lat.</strong>
-          </span>
-          <span>
-            <strong>Long.</strong>
-          </span>
-          <span>
-            <strong>Type</strong>
-          </span>
+    <>
+      <section className="box3">
+        <article>
+          <input
+            type="number"
+            id="count"
+            value={airportsPerPage}
+            onChange={(e) => setAirportsPerPage(e.target.value)}
+          />
+          <div className="table">
+            <span>
+              <strong>Name</strong>
+            </span>
+            <span>
+              <strong>ICAO</strong>
+            </span>
+            <span>
+              <strong>IATA</strong>
+            </span>
+            <span>
+              <strong>Elev.</strong>
+            </span>
+            <span>
+              <strong>Lat.</strong>
+            </span>
+            <span>
+              <strong>Long.</strong>
+            </span>
+            <span>
+              <strong>Type</strong>
+            </span>
 
-          <AirportList airports={currentAirports} loading={loading} />
-        </div>
-      </article>
+            <AirportList airports={currentAirports} loading={loading} />
+          </div>
+        </article>
+      </section>
       <Pagination
+        className="box4"
         totalAirports={filteredData.length}
         startIndex={indexOfFirstAirport}
         endindex={indexOfLastAirport}
@@ -147,7 +150,7 @@ function Table({ searchTerm, setAllData, filteredData, setFilteredData }) {
         currentPage={currentPage}
         airportsPerPage={airportsPerPage}
       />
-    </section>
+    </>
   );
 }
 
