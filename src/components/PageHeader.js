@@ -1,7 +1,9 @@
 function PageHeader() {
   return (
-    <div>
-      <h1>Filter Airports</h1>
+    <div className="box1">
+      <h1>
+        Filter <span>airports</span>
+      </h1>
     </div>
   );
 }

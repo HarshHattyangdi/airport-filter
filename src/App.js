@@ -10,7 +10,7 @@ function App() {
   const [allData, setAllData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   return (
-    <div className="App">
+    <div className="App layout">
       <PageHeader />
       <NavBar allData={allData} setFilteredData={setFilteredData} />
       <Table

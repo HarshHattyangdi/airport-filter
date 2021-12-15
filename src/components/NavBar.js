@@ -31,8 +31,8 @@ function NavBar({ allData, setFilteredData }) {
   };
   // console.log(allData);
   return (
-    <nav>
-      <div>
+    <nav className="box2">
+      <div className="flex-type">
         <h3>Type</h3>
         <ul>
           {AirportTypes.map((val, i) => {
@@ -47,12 +47,13 @@ function NavBar({ allData, setFilteredData }) {
                   value={val}
                 />{" "}
                 {val}
+                <span className="checkmark"></span>
               </li>
             );
           })}
         </ul>
       </div>
-      <div>
+      <div className="flex-search">
         <h3>Filter by search</h3>
         <div>
           <input
