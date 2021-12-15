@@ -18,8 +18,9 @@ function NavBar({ allData, setFilteredData }) {
       return index === position ? !item : item;
     });
     setIsChecked(updatedCheckedState);
-    setFilterString(filterString + value);
+    setFilterString(filterString);
   };
+  console.log(filterString);
   // console.log(filterString);
   const handleSearch = (event) => {
     let value = event.target.value.toLowerCase();
